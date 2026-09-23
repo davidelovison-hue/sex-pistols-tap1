@@ -453,6 +453,13 @@
   background: var(--cta-bg-hover, #0062a3);
 }
 
+.cartPoweredBy {
+  display: block;
+  width: 100%;
+  margin-top: 0.85rem;
+  text-align: center;
+}
+
 .cartPanelMobileWrap {
   display: none;
 }

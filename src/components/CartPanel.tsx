@@ -13,6 +13,7 @@ import { connectPath } from '../lib/routes';
 import { formatPrice } from '../lib/theme';
 import { AddonCheckoutPrompt } from './AddonCheckoutPrompt';
 import { AddToCartToast } from './AddToCartToast';
+import { PoweredByFever } from './PoweredByFever';
 import './CartPanel.css';
 
 function CartIcon() {
@@ -363,6 +364,15 @@ export function CartPanel({
     </div>
   );
 
+  const checkoutBlock = (
+    <>
+      {checkoutRow}
+      <div className="cartPoweredBy">
+        <PoweredByFever />
+      </div>
+    </>
+  );
+
   if (mode === 'desktop') {
     return (
       <>
@@ -387,7 +397,7 @@ export function CartPanel({
             <div className="cartFooter" aria-label="Cart summary and checkout">
               {showScrollHint ? <div className="cartScrollHint">Scroll to see more tickets</div> : null}
               {cartSummary}
-              {checkoutRow}
+              {checkoutBlock}
             </div>
           </div>
         </div>
@@ -468,7 +478,7 @@ export function CartPanel({
               <div className="cartFooter">
                 {showScrollHint ? <div className="cartScrollHint">Scroll to see more tickets</div> : null}
                 {cartSummary}
-                {checkoutRow}
+                {checkoutBlock}
               </div>
             </div>
           </div>

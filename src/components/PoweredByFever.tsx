@@ -1,10 +1,9 @@
-import { colors } from '../lib/theme';
+import './PoweredByFever.css'
 
 export function PoweredByFever() {
   return (
-    <div className="flex items-center justify-center" style={{ gap: '0.25rem' }}>
-      <span style={{ fontSize: '0.75rem', color: colors.textMuted }}>Powered by</span>
-      <span style={{ fontSize: '0.75rem', fontWeight: 600, color: colors.textDark }}>fever</span>
-    </div>
-  );
+    <p className="poweredByFever">
+      Powered by <strong>fever</strong>
+    </p>
+  )
 }

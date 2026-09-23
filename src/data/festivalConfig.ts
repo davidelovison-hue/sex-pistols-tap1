@@ -50,7 +50,8 @@ export const GALLERY_IMAGES = [
   },
 ];
 
-export const FESTIVAL_HERO_VIDEO = `${BASE}hero-sex-pistols.mp4`;
+// Mixkit free clip, 1080p: festival stage with moving lights and a crowd. Not this lineup.
+export const FESTIVAL_HERO_VIDEO = `${BASE}hero-stage.mp4`;
 
 export const FESTIVAL_MEDIA_HERO = {
   video: FESTIVAL_HERO_VIDEO,
@@ -66,7 +67,7 @@ export const AVATAR_URL = `${BASE}event-logo.svg`;
 
 export const VENUE_IMAGE = `${BASE}venue-tap1.svg`;
 
-export const HERO_KICKER = '50 years since Anarchy In The UK';
+export const HERO_KICKER = 'Official ticketing platform';
 
 export const HERO_FACTS = [
   { label: 'Date', value: '28 Nov' },
