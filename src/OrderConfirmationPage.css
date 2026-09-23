@@ -6,7 +6,7 @@
   width: 100%;
   background: transparent;
   color: var(--checkout-text);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 /* Top bar (dense, dark - like reference nav) */
@@ -247,7 +247,7 @@
 }
 
 .orderConfirmAccordion__trigger:hover {
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--checkout-text);
 }
 
 .orderConfirmAccordion__chev {
@@ -494,8 +494,9 @@
 }
 
 .orderConfirmCta:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.85);
+  background: #f5f5f5;
+  border-color: var(--checkout-text);
+  color: var(--checkout-text);
 }
 
 .orderConfirmFineprint {

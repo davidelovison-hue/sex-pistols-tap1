@@ -334,7 +334,7 @@
   border: none;
   border-radius: 9999px;
   padding: 0.9rem 1.25rem;
-  background: #e36a28;
+  background: #0079ca;
   color: #fff;
   font: inherit;
   font-size: 1rem;
@@ -343,7 +343,7 @@
 }
 
 .addCardForm__continue:hover {
-  background: #cf5c1f;
+  background: #0062a3;
 }
 
 .guestCheckoutPayMethod {
@@ -597,12 +597,12 @@
 
 .guestCheckoutPayBtn {
   margin-top: 0.25rem;
-  background: #e36a28 !important;
+  background: #0079ca !important;
   border-radius: 0.5rem;
 }
 
 .guestCheckoutPayBtn:hover:not(:disabled) {
-  background: #cf5c1f !important;
+  background: #0062a3 !important;
 }
 
 .checkoutPayBtn:disabled {
@@ -612,6 +612,6 @@
 }
 
 .checkoutPayBtn.guestCheckoutPayBtn:disabled:hover {
-  background: #e36a28 !important;
+  background: #0079ca !important;
   box-shadow: none;
 }
