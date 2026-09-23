@@ -7,7 +7,7 @@ export const DEMO_ORDER_EVENT_ID = FESTIVAL_EVENT_ID;
 
 export function ensureDemoOrder(): OrderConfirmationState | null {
   const session = getUserSession();
-  const ticketSubtotal = 69;
+  const ticketSubtotal = 790;
   const serviceFee = computeServiceFee(ticketSubtotal);
   const total = ticketSubtotal + serviceFee;
 
@@ -17,7 +17,7 @@ export function ensureDemoOrder(): OrderConfirmationState | null {
     eventImage: FESTIVAL_EVENT.image,
     venue: FESTIVAL_EVENT.venue,
     dateLine: FESTIVAL_EVENT.dateLine,
-    lines: [{ id: 'ticket-ga', label: '1× General access (First wave)', amount: ticketSubtotal }],
+    lines: [{ id: 'ticket-standard', label: '1× STANDARD', amount: ticketSubtotal }],
     subtotal: ticketSubtotal,
     serviceFee,
     total,
@@ -26,12 +26,12 @@ export function ensureDemoOrder(): OrderConfirmationState | null {
     email: session?.email ?? 'guest@feverup.com',
     guest: {
       fullName: session?.name ?? 'Demo Guest',
-      phoneCountryCode: '+33',
-      phoneNational: '612345678',
+      phoneCountryCode: '+45',
+      phoneNational: '12345678',
       dateOfBirth: '01/01/1990',
       gender: 'prefer_not',
     },
-    orderRef: 'GAER-DEMO-7K2M9X',
+    orderRef: 'TAP1-DEMO-7K2M9X',
   };
 
   persistOrderConfirmation(payload);

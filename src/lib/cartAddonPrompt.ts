@@ -10,6 +10,7 @@ let shownThisPlanVisit = false;
 export function cartHasTicketsWithoutAddons(items: { entityId: string }[]): boolean {
   const coreIds = new Set<string>(PLAN_CORE_CATEGORY_IDS);
   const addonIds = new Set<string>(PLAN_ADDON_CATEGORIES.map((tab) => tab.id));
+  if (addonIds.size === 0) return false;
   let hasTicket = false;
   let hasAddon = false;
 

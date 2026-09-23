@@ -77,8 +77,8 @@ export function OverviewSection() {
             Description
           </h2>
           <p className="bodyText">
-            {FESTIVAL_COPY.ticketTabs} Payment issues:{' '}
-            <a href={`mailto:${FESTIVAL_COPY.supportEmail}`} className="link">
+            {FESTIVAL_COPY.ticketTabs}{' '}
+            <a href={FESTIVAL_COPY.officialSiteUrl} className="link" target="_blank" rel="noopener noreferrer">
               {FESTIVAL_COPY.supportEmail}
             </a>
             . By continuing, you agree to our{' '}

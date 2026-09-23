@@ -105,8 +105,12 @@ export function EntityCard({ entity }: EntityCardProps) {
     [hasGallery],
   );
 
+  const maxQuantity = entity.purchaseMode === 'contact' ? 0 : (entity.maxQuantity ?? 99);
+  const isContactOnly = entity.purchaseMode === 'contact';
+
   const updateQuantity = (nextQuantity: number) => {
-    const clamped = Math.max(0, Math.min(99, nextQuantity));
+    if (isContactOnly) return;
+    const clamped = Math.max(0, Math.min(maxQuantity, nextQuantity));
     setCartQuantity(entity, clamped, selectedByAxis);
   };
 
@@ -312,6 +316,13 @@ export function EntityCard({ entity }: EntityCardProps) {
                   </div>
                   <span className="soldOutPill">Sold out</span>
                 </div>
+              ) : isContactOnly ? (
+                <div className="priceRowWithStepper">
+                  <div className="price">
+                    <span className="priceAmount">{formatEntityTotalPrice(unitPrice)}</span>
+                  </div>
+                  <span className="soldOutPill">Contact venue</span>
+                </div>
               ) : (
                 <div className="priceRowWithStepper">
                   <div className="price">
@@ -332,6 +343,7 @@ export function EntityCard({ entity }: EntityCardProps) {
                       type="button"
                       className="qtyBtnPlus"
                       aria-label="Increase quantity"
+                      disabled={quantity >= maxQuantity}
                       onClick={() => updateQuantity(quantity + 1)}
                     >
                       +
@@ -398,6 +410,13 @@ export function EntityCard({ entity }: EntityCardProps) {
                 </div>
                 <span className="soldOutPill">Sold out</span>
               </div>
+            ) : isContactOnly ? (
+              <div className="priceRowWithStepper">
+                <div className="price">
+                  <span className="priceAmount">{formatEntityTotalPrice(unitPrice)}</span>
+                </div>
+                <span className="soldOutPill">Contact venue</span>
+              </div>
             ) : (
               <div className="priceRowWithStepper">
                 <div className="price">
@@ -418,6 +437,7 @@ export function EntityCard({ entity }: EntityCardProps) {
                     type="button"
                     className="qtyBtnPlus"
                     aria-label="Increase quantity"
+                    disabled={quantity >= maxQuantity}
                     onClick={() => updateQuantity(quantity + 1)}
                   >
                     +

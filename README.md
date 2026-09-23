@@ -1,13 +1,14 @@
-# Gärten Project
+# Sex Pistols feat. Frank Carter — TAP1
 
-Ticketing prototype for **ARTBAT @ Château de Fontainebleau** (12 September 2026), branded from [gartenproject.com](https://www.gartenproject.com/).
+Ticketing prototype for **Sex Pistols feat. Frank Carter** at TAP1, København, on Saturday 28 November 2026. The page structure follows the Gärten ticketing prototype. Ticket inventory follows the [United Tickets listing](https://billet.unitedtickets.dk/event/sex-pistols-feat-frank-carter/tap1/3715855?lang=sv-SE).
 
-## Plan tabs
+## Tickets
 
-1. **Entry pass** — General access (€49, three waves) and VIP area (€199 / €249)
-2. **Merch** — limited-edition t-shirts (S–XXL)
-3. **Add-ons** — bar top-ups (€20 / €50 / €100 / €150)
-4. **Shuttle** — return bus to Paris-Bercy (€15)
+1. **STANDARD** — kr. 790,00 (ticket price kr. 745,00), up to 10 per order
+2. **KØRESTOLSBILLET** — kr. 790,00 (ticket price kr. 745,00), up to 2 per order
+3. **LEDSAGERBILLET** — kr. 0,00, issued by contacting Fan Care
+
+Doors 18:30. Show starts 20:00. TAP1, Prags Boulevard 47, 2300 København S.
 
 ## Commands
 

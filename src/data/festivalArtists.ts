@@ -10,24 +10,18 @@ export type FestivalArtist = {
 
 const BASE = import.meta.env.BASE_URL;
 
-export const LINEUP_FALLBACK_IMAGE = GALLERY_IMAGES[0]?.src ?? `${BASE}festival-poster.jpg`;
+export const LINEUP_FALLBACK_IMAGE = GALLERY_IMAGES[0]?.src ?? `${BASE}event-poster.svg`;
 
 function artist(id: string, name: string, image: string): FestivalArtist {
   return { id, name, image, fallbackImage: LINEUP_FALLBACK_IMAGE };
 }
 
-/** Headliner plus supporting artists. */
+/** Sex Pistols feat. Frank Carter, plus support still to be announced. */
 export const FESTIVAL_ARTISTS: FestivalArtist[] = [
-  artist('black-coffee', 'Black Coffee', `${BASE}artist-black-coffee.jpg`),
-  artist('keinemusik', 'Keinemusik', `${BASE}artist-keinemusik.jpg`),
-  artist('dixon', 'Dixon', `${BASE}artist-dixon.jpg`),
-  artist('ame', 'Âme', `${BASE}artist-ame.jpg`),
-  artist('themba', 'Themba', `${BASE}artist-themba.jpg`),
-  artist('da-capo', 'Da Capo', `${BASE}artist-da-capo.jpg`),
-  artist('culoe-de-song', 'Culoe De Song', `${BASE}artist-culoe.jpg`),
-  artist('shimza', 'Shimza', `${BASE}artist-shimza.jpg`),
-  artist('jimi-jules', 'Jimi Jules', `${BASE}artist-jimi-jules.jpg`),
-  artist('trikk', 'Trikk', `${BASE}artist-trikk.jpg`),
-  artist('mind-against', 'Mind Against', `${BASE}artist-mind-against.jpg`),
-  artist('sofiane-pamart', 'Sofiane Pamart', `${BASE}artist-pamart.jpg`),
+  artist('sex-pistols', 'Sex Pistols', `${BASE}artist-sex-pistols.svg`),
+  artist('frank-carter', 'Frank Carter', `${BASE}artist-frank-carter.svg`),
+  artist('steve-jones', 'Steve Jones', `${BASE}artist-steve-jones.svg`),
+  artist('paul-cook', 'Paul Cook', `${BASE}artist-paul-cook.svg`),
+  artist('glen-matlock', 'Glen Matlock', `${BASE}artist-glen-matlock.svg`),
+  artist('support', 'Support TBA', `${BASE}artist-support.svg`),
 ];

@@ -7,8 +7,8 @@ export type UserSession = {
   marketingEmails?: boolean
 }
 
-const SESSION_KEY = 'gaerten:user-session'
-const LAST_ORDER_KEY = 'gaerten:last-order-event'
+const SESSION_KEY = 'sex-pistols-tap1:user-session'
+const LAST_ORDER_KEY = 'sex-pistols-tap1:last-order-event'
 
 export function emailToDisplayName(email: string): string {
   const local = email.split('@')[0] ?? email

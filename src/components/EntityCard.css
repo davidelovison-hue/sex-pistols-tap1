@@ -746,8 +746,14 @@
   color: #fff;
 }
 
-.qtyBtnPlus:hover {
+.qtyBtnPlus:hover:not(:disabled) {
   background: #006bab;
+}
+
+.qtyBtnPlus:disabled {
+  background: #ececec;
+  color: var(--label-muted);
+  cursor: not-allowed;
 }
 
 .qtyValue {

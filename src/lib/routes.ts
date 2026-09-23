@@ -2,7 +2,7 @@
 
 export const FORCED_STEPPER_PATH = '/ForcedStepper';
 
-const PLAN_ORIGIN_KEY = 'gaerten.planOrigin';
+const PLAN_ORIGIN_KEY = 'sex-pistols-tap1.planOrigin';
 
 export function isForcedStepperPath(pathname: string): boolean {
   return pathname.replace(/\/$/, '') === FORCED_STEPPER_PATH;

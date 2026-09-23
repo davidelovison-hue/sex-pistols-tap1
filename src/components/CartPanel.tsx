@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { findEntity } from '../data/planCatalog';
 import { formatCartSelections, useCart, type CartItem } from '../lib/cartContext';
 import {
   cartHasTicketsWithoutAddons,
@@ -276,6 +277,7 @@ export function CartPanel({
     <ul className="cartList">
       {items.map((item) => {
         const variantText = formatCartSelections(item.selections);
+        const maxQuantity = findEntity(item.entityId)?.maxQuantity ?? 99;
 
         return (
           <li key={item.key} className="ticketCard">
@@ -316,10 +318,11 @@ export function CartPanel({
                   type="button"
                   className="cartQtyBtnPlus"
                   aria-label={`Increase quantity for ${item.name}`}
+                  disabled={item.quantity >= maxQuantity}
                   onClick={() =>
                     setQuantity(
                       toCartEntity(item),
-                      Math.min(99, item.quantity + 1),
+                      Math.min(maxQuantity, item.quantity + 1),
                       item.selections,
                     )
                   }

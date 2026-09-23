@@ -1,6 +1,6 @@
 /**
- * Gärten 2027 ticket catalog.
- * Entry pass: one GA card and one VIP card, each with release waves.
+ * Sex Pistols feat. Frank Carter at TAP1.
+ * Inventory matches the United Tickets listing: STANDARD, KØRESTOLSBILLET, LEDSAGERBILLET.
  */
 import { formatPrice } from '../lib/formatPrice';
 
@@ -28,6 +28,10 @@ export type PlanEntity = {
   displaySummary?: boolean;
   pricingMode?: 'dynamic';
   hideImage?: boolean;
+  /** Maximum selectable quantity. The listing caps STANDARD at 10 and KØRESTOLSBILLET at 2. */
+  maxQuantity?: number;
+  /** Companion tickets are listed at kr. 0,00 and issued by contacting the venue. */
+  purchaseMode?: 'online' | 'contact';
 };
 
 export type PlanGroup = {
@@ -44,51 +48,14 @@ export type PlanCategory = {
   groups: PlanGroup[];
 };
 
-export const ENTRY_TICKET_IDS = ['ticket-ga', 'ticket-vip'] as const;
+export const ENTRY_TICKET_IDS = [
+  'ticket-standard',
+  'ticket-wheelchair',
+  'ticket-companion',
+] as const;
 
-const TEE_SIZES: VariantAxis = {
-  id: 'size',
-  label: 'Size',
-  options: ['S', 'M', 'L', 'XL', 'XXL'],
-};
-
-function merchTee(id: string, name: string, price: number): PlanEntity {
-  return {
-    id,
-    name,
-    price,
-    type: 'configurable_single',
-    listingTag: 'LIMITED',
-    description: 'Limited edition. Choose your size.',
-    variantAxes: [TEE_SIZES],
-    optionPrices: Object.fromEntries(TEE_SIZES.options.map((size) => [size, price])),
-    cardPreviewBullets: ['Limited edition', 'S–XXL'],
-    includedItems: ['1× t-shirt'],
-  };
-}
-
-function barTopUp(id: string, amount: number): PlanEntity {
-  const option = `€${amount}`;
-  return {
-    id,
-    name: `${amount}€ top-up`,
-    price: amount,
-    type: 'configurable_single',
-    hideImage: true,
-    description: 'Load credit onto your Gärten bar account. Cashless only.',
-    variantAxes: [
-      {
-        id: 'option',
-        label: 'Option',
-        options: [option],
-        defaultOption: option,
-      },
-    ],
-    cardPreviewBullets: [`Load €${amount}`, 'Cashless bar'],
-    includedItems: [`€${amount} bar credit`],
-    requires: [...ENTRY_TICKET_IDS],
-  };
-}
+const TICKET_PRICE = 745;
+const TICKET_TOTAL = 790;
 
 export const PLAN_CATALOG: PlanCategory[] = [
   {
@@ -99,126 +66,52 @@ export const PLAN_CATALOG: PlanCategory[] = [
   },
   {
     id: 'entry',
-    title: 'Entry pass',
+    title: 'Tickets',
     groups: [
       {
-        id: 'entry-passes',
-        title: 'Choose your pass',
+        id: 'tickets',
+        title: 'Choose your ticket',
         entities: [
           {
-            id: 'ticket-ga',
-            name: 'General access',
-            price: 69,
+            id: 'ticket-standard',
+            name: 'STANDARD',
+            price: TICKET_TOTAL,
             type: 'configurable_single',
-            listingTag: 'SELLING FAST',
-            description: 'General admission to Gärten. Valid for 1 person. Choose your release wave.',
-            variantAxes: [
-              {
-                id: 'wave',
-                label: 'Wave',
-                options: ['First wave', 'Second wave', 'Third wave'],
-                defaultOption: 'First wave',
-              },
+            maxQuantity: 10,
+            description:
+              'Total kr. 790,00. Ticket price kr. 745,00 plus booking fee. Valid for 1 person. Up to 10 per order.',
+            cardPreviewBullets: [
+              `Ticket price kr. ${TICKET_PRICE},00`,
+              'Up to 10 per order',
             ],
-            optionPrices: {
-              'First wave': 69,
-              'Second wave': 69,
-              'Third wave': 69,
-            },
-            cardPreviewBullets: ['Valid for 1 person', 'All waves €69'],
-            includedItems: ['Festival entry', 'General access area'],
+            includedItems: ['1× STANDARD admission', 'Booking fee included in kr. 790,00'],
           },
           {
-            id: 'ticket-vip',
-            name: 'VIP area',
-            price: 249,
+            id: 'ticket-wheelchair',
+            name: 'KØRESTOLSBILLET',
+            price: TICKET_TOTAL,
             type: 'configurable_single',
             listingTag: 'LIMITED',
-            pricingMode: 'dynamic',
+            maxQuantity: 2,
             description:
-              'Limited tickets. Valid for 1 person. Access to the VIP area on the stage next to the DJ booth throughout the show. Private WC. Bottle service. Fast-track entry.',
-            variantAxes: [
-              {
-                id: 'wave',
-                label: 'Release',
-                options: ['First release', 'Second release'],
-                defaultOption: 'First release',
-              },
+              'Wheelchair ticket. Total kr. 790,00. Ticket price kr. 745,00 plus booking fee. Up to 2 per order.',
+            cardPreviewBullets: [
+              `Ticket price kr. ${TICKET_PRICE},00`,
+              'Up to 2 per order',
             ],
-            optionPrices: {
-              'First release': 249,
-              'Second release': 249,
-            },
-            cardPreviewBullets: ['Stage VIP next to DJ booth', 'Private WC · bottle service'],
-            includedItems: [
-              'VIP area next to the DJ booth',
-              'Private WC',
-              'Bottle service',
-              'Fast-track entry',
-            ],
+            includedItems: ['1× wheelchair ticket', 'Booking fee included in kr. 790,00'],
           },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'merch',
-    title: 'Merch',
-    groups: [
-      {
-        id: 'merch-tees',
-        title: 'T-shirts',
-        entities: [
-          merchTee('merch-tee-black-coffee', 'T-shirt — Black Coffee @Grand Palais', 40),
-          merchTee('merch-tee-gaerten-2026', 'T-shirt Gärten 2026 — Black', 35),
-          merchTee('merch-tee-gaerten-project', 'T-shirt Gärten Project — Black', 35),
-        ],
-      },
-    ],
-  },
-  {
-    id: 'addons',
-    title: 'Bar',
-    groups: [
-      {
-        id: 'addons-bar',
-        title: 'Bar',
-        entities: [
-          barTopUp('bar-topup-20', 20),
-          barTopUp('bar-topup-50', 50),
-          barTopUp('bar-topup-100', 100),
-          barTopUp('bar-topup-150', 150),
-        ],
-      },
-    ],
-  },
-  {
-    id: 'shuttle',
-    title: 'Shuttle',
-    groups: [
-      {
-        id: 'shuttle-paris',
-        title: 'Paris',
-        entities: [
           {
-            id: 'shuttle-paris-return',
-            name: 'Return shuttle to Paris',
-            price: 15,
+            id: 'ticket-companion',
+            name: 'LEDSAGERBILLET',
+            price: 0,
             type: 'configurable_single',
-            listingTag: 'LIMITED',
+            purchaseMode: 'contact',
+            maxQuantity: 0,
             description:
-              'Limited capacity. Night shuttle after the event. Exact route to be confirmed.',
-            cardPreviewBullets: ['Limited capacity', 'Night shuttle'],
-            includedItems: ['One-way return seat to Paris-Bercy'],
-            variantAxes: [
-              {
-                id: 'option',
-                label: 'Option',
-                options: ['Paris-Bercy'],
-                defaultOption: 'Paris-Bercy',
-              },
-            ],
-            requires: [...ENTRY_TICKET_IDS],
+              'kr. 0,00. Contact the venue for tickets. Companion tickets for other disabilities are issued by contacting Fan Care. Only a limited number are available.',
+            cardPreviewBullets: ['kr. 0,00', 'Contact Fan Care'],
+            includedItems: ['Companion ticket issued by Fan Care'],
           },
         ],
       },
@@ -228,28 +121,15 @@ export const PLAN_CATALOG: PlanCategory[] = [
 
 const BASE = import.meta.env.BASE_URL;
 
-export const DEFAULT_TICKET_IMAGE = `${BASE}entity-ticket.jpg`;
+export const DEFAULT_TICKET_IMAGE = `${BASE}ticket-standard.svg`;
 
 export const ENTITY_IMAGES: Record<string, string> = {
-  'ticket-ga': `${BASE}ticket-ga-crowd.jpg`,
-  'ticket-vip': `${BASE}ticket-vip-lounge.jpg`,
-  'merch-tee-black-coffee': `${BASE}merch-black-coffee-front.jpg`,
-  'merch-tee-gaerten-2026': `${BASE}merch-gaerten-2026.jpg`,
-  'merch-tee-gaerten-project': `${BASE}merch-gaerten-project.jpg`,
-  'shuttle-paris-return': `${BASE}entity-bus.jpg`,
+  'ticket-standard': `${BASE}ticket-standard.svg`,
+  'ticket-wheelchair': `${BASE}ticket-wheelchair.svg`,
+  'ticket-companion': `${BASE}ticket-companion.svg`,
 };
 
-export const ENTITY_GALLERIES: Record<string, string[]> = {
-  'merch-tee-black-coffee': [
-    `${BASE}merch-black-coffee-front.jpg`,
-    `${BASE}merch-black-coffee-back.jpg`,
-  ],
-  'merch-tee-gaerten-2026': [`${BASE}merch-gaerten-2026.jpg`, `${BASE}merch-gaerten-2026-back.jpg`],
-  'merch-tee-gaerten-project': [
-    `${BASE}merch-gaerten-project.jpg`,
-    `${BASE}merch-gaerten-project-back.jpg`,
-  ],
-};
+export const ENTITY_GALLERIES: Record<string, string[]> = {};
 
 export function getEntityImages(entityId: string): string[] {
   if (ENTITY_GALLERIES[entityId]) return ENTITY_GALLERIES[entityId];
@@ -269,11 +149,7 @@ export function findEntity(entityId: string): PlanEntity | undefined {
 
 export const PLAN_CORE_CATEGORY_IDS = ['entry'] as const;
 
-export const PLAN_ADDON_CATEGORIES = [
-  { id: 'merch', label: 'Merch' },
-  { id: 'addons', label: 'Bar' },
-  { id: 'shuttle', label: 'Shuttle' },
-] as const;
+export const PLAN_ADDON_CATEGORIES: { id: string; label: string }[] = [];
 
 export type PlanStepId = 'entry' | 'merch' | 'addons' | 'shuttle';
 
@@ -288,10 +164,7 @@ export const PLAN_CORE_STEP_IDS: PlanStepId[] = ['entry'];
 export const DEFAULT_PLAN_STEP: PlanStepId = 'entry';
 
 export const PLAN_STEPS: PlanStep[] = [
-  { id: 'entry', title: 'Entry pass', categoryIds: ['entry'] },
-  { id: 'merch', title: 'Merch', categoryIds: ['merch'] },
-  { id: 'addons', title: 'Bar', categoryIds: ['addons'] },
-  { id: 'shuttle', title: 'Shuttle', categoryIds: ['shuttle'] },
+  { id: 'entry', title: 'Tickets', categoryIds: ['entry'] },
 ];
 
 const CATEGORY_TO_STEP: Record<string, PlanStepId> = {

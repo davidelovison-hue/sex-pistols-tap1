@@ -4,6 +4,7 @@ import {
   GALLERY_IMAGE_URLS,
   GALLERY_IMAGES,
   HERO_FACTS,
+  HERO_KICKER,
 } from '../data/festivalConfig';
 import { findEntity } from '../data/planCatalog';
 import { FESTIVAL_EVENT } from '../lib/festivalEvent';
@@ -55,7 +56,7 @@ export function FestivalGallery({ onBuyTickets }: FestivalGalleryProps) {
     () => buildGalleryItems(GALLERY_IMAGE_URLS, config.video, config.videoPoster),
     [config.video, config.videoPoster],
   );
-  const fromPrice = formatPrice(findEntity('ticket-ga')?.price ?? 69);
+  const fromPrice = formatPrice(findEntity('ticket-standard')?.price ?? 790);
 
   const canOpenGallery = galleryItems.length > 0;
 
@@ -71,17 +72,25 @@ export function FestivalGallery({ onBuyTickets }: FestivalGalleryProps) {
       <section className="festivalGalleryBand" aria-label="Festival media">
         <div className="eventMediaHero eventMediaHero--immersive">
           <div className="eventMediaHero__main">
-            <video
-              className="eventMediaHero__video"
-              src={config.video}
-              poster={config.videoPoster}
-              muted
-              playsInline
-              loop
-              autoPlay
-              preload="auto"
-              aria-label={`${alt} video`}
-            />
+            {config.video ? (
+              <video
+                className="eventMediaHero__video"
+                src={config.video}
+                poster={config.videoPoster}
+                muted
+                playsInline
+                loop
+                autoPlay
+                preload="auto"
+                aria-label={`${alt} video`}
+              />
+            ) : (
+              <img
+                className="eventMediaHero__video"
+                src={config.videoPoster}
+                alt={alt}
+              />
+            )}
             {canOpenGallery ? (
               <button
                 type="button"
@@ -92,7 +101,7 @@ export function FestivalGallery({ onBuyTickets }: FestivalGalleryProps) {
             ) : null}
             <div className="eventMediaHero__scrim" aria-hidden />
             <div className="eventMediaHero__overlay">
-              <p className="eventMediaHero__exclusive">Produced by Gärten</p>
+              <p className="eventMediaHero__exclusive">{HERO_KICKER}</p>
               <h1 className="eventMediaHero__title">{FESTIVAL_EVENT.title}</h1>
               <div className="eventMediaHero__metaRow">
                 <p className="eventMediaHero__venue">{FESTIVAL_EVENT.venue}</p>

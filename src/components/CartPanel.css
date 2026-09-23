@@ -344,8 +344,14 @@
   color: #fff;
 }
 
-.cartQtyBtnPlus:hover {
+.cartQtyBtnPlus:hover:not(:disabled) {
   background: #006bab;
+}
+
+.cartQtyBtnPlus:disabled {
+  background: #ececec;
+  color: var(--label-muted);
+  cursor: not-allowed;
 }
 
 .cartQtyValue {

@@ -1,15 +1,15 @@
 import { GALLERY_IMAGES, POSTER_IMAGE } from '../data/festivalConfig';
 
-export const FESTIVAL_EVENT_ID = 'black-coffee-grand-palais-2027';
+export const FESTIVAL_EVENT_ID = 'sex-pistols-tap1-2026';
 
-export const FESTIVAL_LOGO_SRC = `${import.meta.env.BASE_URL}festival-logo.png`;
+export const FESTIVAL_LOGO_SRC = `${import.meta.env.BASE_URL}event-logo.svg`;
 
 export const FESTIVAL_EVENT = {
   id: FESTIVAL_EVENT_ID,
-  title: 'Black Coffee @ Grand Palais',
+  title: 'Sex Pistols feat. Frank Carter',
   image: GALLERY_IMAGES[0]?.src ?? POSTER_IMAGE,
-  venue: 'Grand Palais, Paris',
-  dateLine: 'Saturday 15 May 2027',
+  venue: 'TAP1, København S',
+  dateLine: 'Saturday 28 November 2026',
 };
 
 export function getFestivalEvent(eventId: string) {

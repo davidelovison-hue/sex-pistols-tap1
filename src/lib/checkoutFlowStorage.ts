@@ -1,8 +1,8 @@
 import { isEventCheckoutState, type EventCheckoutState } from './checkoutState'
 
-const BASKET_PREFIX = 'gaerten:basket:'
-const CONNECT_PREFIX = 'gaerten:connect:'
-const GUEST_CONTACT_PREFIX = 'gaerten:guest-contact:'
+const BASKET_PREFIX = 'sex-pistols-tap1:basket:'
+const CONNECT_PREFIX = 'sex-pistols-tap1:connect:'
+const GUEST_CONTACT_PREFIX = 'sex-pistols-tap1:guest-contact:'
 
 export type ConnectFlowStep = 'choose' | 'email' | 'verify'
 

@@ -148,10 +148,10 @@ export function ImmersiveOverview() {
 
   const galleryThumbs = useMemo(() => {
     const images = GALLERY_IMAGE_URLS.filter((src) => src !== FESTIVAL_MEDIA_HERO.videoPoster);
-    return [
-      { kind: 'video' as const, src: FESTIVAL_MEDIA_HERO.videoPoster, video: FESTIVAL_MEDIA_HERO.video },
-      ...images.map((src) => ({ kind: 'image' as const, src })),
-    ];
+    const lead = FESTIVAL_MEDIA_HERO.video
+      ? [{ kind: 'video' as const, src: FESTIVAL_MEDIA_HERO.videoPoster, video: FESTIVAL_MEDIA_HERO.video }]
+      : [{ kind: 'image' as const, src: FESTIVAL_MEDIA_HERO.videoPoster }];
+    return [...lead, ...images.map((src) => ({ kind: 'image' as const, src }))];
   }, []);
 
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(FESTIVAL_COPY.gettingThere.mapQuery)}`;

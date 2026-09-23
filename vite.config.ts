@@ -23,7 +23,7 @@ function ghPagesSpa404(): import('vite').Plugin {
 
 export default defineConfig(({ mode }) => ({
   plugins: [react(), ...(mode === 'production' ? [ghPagesSpa404()] : [])],
-  base: mode === 'production' ? '/gaerten/' : '/',
+  base: mode === 'production' ? '/sex-pistols-tap1/' : '/',
   server: {
     host: true,
     port: 5175,

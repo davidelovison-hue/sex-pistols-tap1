@@ -1,6 +1,6 @@
 /**
- * Festival-specific branding and copy for Gärten —
- * Black Coffee @ Grand Palais, 15 May 2027.
+ * Event branding and copy for Sex Pistols feat. Frank Carter at TAP1.
+ * Facts and ticket inventory follow the United Tickets listing.
  */
 
 export type PlanCategory = {
@@ -10,147 +10,142 @@ export type PlanCategory = {
 
 export const PLAN_CATEGORIES: PlanCategory[] = [
   { id: 'overview', title: 'Overview' },
-  { id: 'entry', title: 'Entry pass' },
-  { id: 'merch', title: 'Merch' },
-  { id: 'addons', title: 'Bar' },
-  { id: 'shuttle', title: 'Shuttle' },
+  { id: 'entry', title: 'Tickets' },
 ];
 
-/** Default plan tab (entry passes). */
+/** Default plan tab (tickets). */
 export const DEFAULT_PLAN_TAB = 'entry';
 
 const BASE = import.meta.env.BASE_URL;
 
 export const HERO_GRID_IMAGES = [
-  `${BASE}venue-grand-palais.jpg`,
-  `${BASE}hero-grid-2.jpg`,
-  `${BASE}hero-grid-3.jpg`,
-  `${BASE}hero-grid-4.jpg`,
+  `${BASE}event-crowd.svg`,
+  `${BASE}event-stage.svg`,
+  `${BASE}event-hall.svg`,
+  `${BASE}venue-tap1.svg`,
 ] as const;
 
 export const GALLERY_IMAGES = [
   {
-    src: `${BASE}venue-grand-palais.jpg`,
-    alt: 'Black Coffee @ Grand Palais — Gärten',
+    src: `${BASE}event-poster.svg`,
+    alt: 'Sex Pistols feat. Frank Carter at TAP1, Copenhagen',
+  },
+  {
+    src: HERO_GRID_IMAGES[0],
+    alt: 'Sex Pistols at TAP1',
   },
   {
     src: HERO_GRID_IMAGES[1],
-    alt: 'Gärten night under the lights',
+    alt: 'Show night at TAP1',
   },
   {
     src: HERO_GRID_IMAGES[2],
-    alt: 'Crowd at a Gärten night',
+    alt: 'TAP1, København S',
   },
   {
     src: HERO_GRID_IMAGES[3],
-    alt: 'Gärten — electronic music in Paris',
-  },
-  {
-    src: `${BASE}abono-vipsound.jpg`,
-    alt: 'Night at a Gärten event',
+    alt: 'TAP1, Prags Boulevard 47',
   },
 ];
 
-export const FESTIVAL_HERO_VIDEO = `${BASE}hero-video-festival.mp4`;
+export const FESTIVAL_HERO_VIDEO = '';
 
 export const FESTIVAL_MEDIA_HERO = {
   video: FESTIVAL_HERO_VIDEO,
-  videoPoster: `${BASE}hero-video-poster.jpg`,
+  videoPoster: `${BASE}event-poster.svg`,
   grid: HERO_GRID_IMAGES,
 };
 
 export const GALLERY_IMAGE_URLS = GALLERY_IMAGES.map((image) => image.src);
 
-export const POSTER_IMAGE = `${BASE}festival-poster.jpg`;
+export const POSTER_IMAGE = `${BASE}event-poster.svg`;
 
-export const AVATAR_URL = `${BASE}favicon.png`;
+export const AVATAR_URL = `${BASE}event-logo.svg`;
 
-export const VENUE_IMAGE = `${BASE}venue-grand-palais.jpg`;
+export const VENUE_IMAGE = `${BASE}venue-tap1.svg`;
+
+export const HERO_KICKER = '50 years since Anarchy In The UK';
 
 export const HERO_FACTS = [
-  { label: 'Date', value: '15 May' },
-  { label: 'Doors', value: '20:00' },
-  { label: 'Format', value: 'Indoor' },
-  { label: 'City', value: 'Paris' },
+  { label: 'Date', value: '28 Nov' },
+  { label: 'Doors', value: '18:30' },
+  { label: 'Starts', value: '20:00' },
+  { label: 'City', value: 'København' },
 ] as const;
 
 export const LINEUP_TITLE = 'Lineup';
-export const LINEUP_HINT = 'Saturday 15 May 2027';
+export const LINEUP_HINT = 'Saturday 28 November 2026';
 
 export const IMMERSIVE_EXPECT = [
-  'We are proud to present Black Coffee at the Grand Palais, Paris, on Saturday 15 May 2027. A night of deep, soulful house beneath the largest glass roof in Europe, where French heritage meets cutting-edge electronic music.',
-  'Produced by Gärten: the first luxury musical events brand. Entry passes from €69, with VIP next to the DJ booth, a cashless bar, and Metro access at Champs-Élysées – Clemenceau.',
+  'SEX PISTOLS (Steve Jones, Paul Cook, Glen Matlock) take over TAP1 in Copenhagen on 28 November 2026 for the band’s first Danish concert in 30 years.',
+  'The night marks 50 years since Sex Pistols set fire to the musical landscape. On 26 November it is exactly 50 years since Anarchy In The UK was released. Tickets from kr. 790,00.',
 ] as const;
 
 export const IMMERSIVE_HIGHLIGHT_CARDS = [
   {
-    title: 'Black Coffee at the Grand Palais',
-    text: 'A Gärten night with Black Coffee under the largest glass roof in Europe — deep, soulful house in one of the most spectacular rooms in Paris.',
-    image: `${BASE}venue-grand-palais.jpg`,
+    title: 'First Danish concert in 30 years',
+    text: 'Steve Jones, Paul Cook and Glen Matlock at TAP1. The band has played Denmark only twice before, in 1977 and in 1996.',
+    image: `${BASE}event-poster.svg`,
   },
   {
-    title: 'A lineup built to be felt',
-    text: 'Keinemusik, Dixon, Âme, Themba, Sofiane Pamart and more — house and electronic artists across one indoor evening.',
-    image: `${BASE}hero-grid-2.jpg`,
+    title: '50 years of Anarchy In The UK',
+    text: 'In 1976 the song landed like a cultural bomb. Fifty years later the songs are still here, with Frank Carter out front.',
+    image: `${BASE}event-stage.svg`,
   },
   {
-    title: 'Heritage after dark',
-    text: 'Cutting-edge electronic music in the Nef: French luxury, a unique venue, and one night under steel and glass.',
-    image: `${BASE}hero-grid-3.jpg`,
+    title: 'Frank Carter up front',
+    text: 'Steve Jones calls the current live band a well-oiled machine, with Frank Carter getting the crowd going on songs written 50 years ago.',
+    image: `${BASE}event-crowd.svg`,
   },
   {
-    title: 'VIP, bar, and the way in',
-    text: 'VIP beside the DJ booth with private WC and bottle service. Cashless bar on site. Metro lines 1 and 13 at Champs-Élysées – Clemenceau.',
-    image: `${BASE}hero-grid-4.jpg`,
+    title: 'The songs, live',
+    text: 'Anarchy In The UK, God Save The Queen, Pretty Vacant and Holidays In The Sun. Support from young British punk bands, to be announced.',
+    image: `${BASE}event-hall.svg`,
   },
 ] as const;
 
 export const IMMERSIVE_DAY_STEPS = [
   {
-    title: 'Arrive a little early',
-    text: 'Doors at 20:00. Come through, grab a cashless top-up at the bar, and settle in before Black Coffee.',
+    title: 'Doors at 18:30',
+    text: 'Saturday 28 November 2026 at TAP1, København S. Insläpp 18:30.',
     tone: 'violet' as const,
   },
   {
-    title: 'Take your place',
-    text: 'General access in the Nef, or VIP next to the DJ booth with private WC and bottle service.',
+    title: 'Show starts at 20:00',
+    text: 'Sex Pistols feat. Frank Carter. Support from young British punk bands will be announced.',
     tone: 'orange' as const,
   },
   {
-    title: 'Stay for the last record',
-    text: 'An indoor night through to the close, under the glass roof of the Grand Palais.',
+    title: 'A historic night',
+    text: 'Fifty years after Anarchy In The UK changed the landscape, there is still something to rebel against.',
     tone: 'blue' as const,
   },
 ] as const;
 
 export const IMMERSIVE_FAQS = [
   {
-    q: 'Where can I find my ticket?',
-    a: 'Your ticket is in the confirmation email after checkout, and in your account if you booked while logged in. Bring it on your phone at the gate.',
+    q: 'What tickets are on sale?',
+    a: 'STANDARD kr. 790,00 (ticket price kr. 745,00), up to 10 per order. KØRESTOLSBILLET kr. 790,00 (ticket price kr. 745,00), up to 2 per order. LEDSAGERBILLET kr. 0,00 is issued by contacting Fan Care, and only a limited number are available.',
   },
   {
-    q: 'Can I change my ticket?',
-    a: 'Subject to availability, contact help@feverup.com with your order details. No refunds are permitted. See our Privacy Policy and terms on gartenproject.com.',
+    q: 'What is included in the price?',
+    a: 'The ticket price is set by the organisers. The total is the ticket price plus the booking fee. That fee covers United Tickets service costs. The fee note on the listing says these charges are per transaction, not per ticket.',
   },
   {
     q: 'What time do doors open?',
-    a: 'Doors open at 20:00 on Saturday 15 May 2027.',
+    a: 'Doors at 18:30. The show starts at 20:00 on Saturday 28 November 2026.',
   },
   {
-    q: 'Is there an age requirement?',
-    a: 'This night is 18+. Access is restricted to persons aged 18 and over.',
+    q: 'How do I get a companion ticket?',
+    a: 'LEDSAGERBILLET is kr. 0,00 and is not sold in the quantity selector. Companion tickets for other disabilities are issued by contacting Fan Care. Only a limited number are available.',
   },
   {
-    q: 'Is the bar cashless?',
-    a: 'Yes. On site is cashless only — card and mobile payments. No outside food or drinks.',
+    q: 'Where is the venue?',
+    a: 'TAP1, Prags Boulevard 47, 2300 København S.',
   },
   {
-    q: 'How do I get there?',
-    a: 'Grand Palais, Avenue Winston Churchill, 75008 Paris. Metro: Champs-Élysées – Clemenceau (lines 1 and 13).',
-  },
-  {
-    q: 'What does VIP include?',
-    a: 'VIP is next to the DJ booth, with private WC, bottle service, and fast-track entry. Valid for 1 person.',
+    q: 'When did tickets go on sale?',
+    a: 'The official sale started on 17 September via UnitedTickets.dk.',
   },
 ] as const;
 
@@ -158,51 +153,52 @@ export const OVERVIEW_INFO = [
   {
     icon: '📅',
     label: 'Date',
-    text: 'Saturday 15 May 2027 at the Grand Palais. An evening produced by Gärten.',
+    text: 'Saturday 28 November 2026. Doors 18:30. Show starts 20:00.',
   },
   {
     icon: '📍',
     label: 'Location',
-    text: 'Grand Palais, Avenue Winston Churchill, 75008 Paris, France',
+    text: 'TAP1, Prags Boulevard 47, 2300 København S',
   },
   {
-    icon: '🔞',
-    label: 'Age',
-    text: '18+. Access is restricted to persons aged 18 and over.',
+    icon: '🎫',
+    label: 'Tickets',
+    text: 'STANDARD and KØRESTOLSBILLET kr. 790,00 (ticket price kr. 745,00). LEDSAGERBILLET kr. 0,00 via Fan Care.',
   },
   {
-    icon: '♿',
-    label: 'On site',
-    text: 'Cashless only, card and mobile payments. No outside food or drinks. VIP includes a private WC and bottle service.',
+    icon: '🎸',
+    label: 'Lineup',
+    text: 'Sex Pistols (Steve Jones, Paul Cook, Glen Matlock) feat. Frank Carter. Support to be announced.',
   },
 ];
 
 export const FESTIVAL_CURRENCY = {
-  locale: 'fr-FR',
-  currency: 'EUR',
+  locale: 'da-DK',
+  currency: 'DKK',
 } as const;
 
 export const FESTIVAL_COPY = {
   intro:
-    'We are proud to present Black Coffee at the Grand Palais, Paris, on Saturday 15 May 2027. A night of deep, soulful house beneath the largest glass roof in Europe, where French heritage meets cutting-edge electronic music. Produced by Gärten: the first luxury musical events brand.',
-  introCta: 'Entry passes from €69.',
+    'SEX PISTOLS (Steve Jones, Paul Cook, Glen Matlock) take over TAP1 in Copenhagen on 28 November 2026 for the band’s first Danish concert in 30 years. The concert marks 50 years since Sex Pistols set fire to the musical landscape and became a defining force in punk history. On 26 November it is exactly 50 years since Anarchy In The UK was released.',
+  introCta: 'Tickets from kr. 790,00.',
   ticketTabs:
-    'Browse Entry pass, Merch, Bar, and Shuttle. General access and VIP are sold in waves. Bar is cashless. Metro: Champs-Élysées – Clemenceau (lines 1 and 13).',
-  supportEmail: 'help@feverup.com',
-  privacyUrl: 'https://www.gartenproject.com/privacy-policy',
-  officialSiteUrl: 'https://www.gartenproject.com/',
-  officialSiteLabel: 'gartenproject.com',
-  marketingBrand: 'Gärten',
+    'STANDARD kr. 790,00 (ticket price kr. 745,00), up to 10. KØRESTOLSBILLET kr. 790,00 (ticket price kr. 745,00), up to 2. LEDSAGERBILLET kr. 0,00 by contacting Fan Care.',
+  supportEmail: 'www.UnitedTickets.dk',
+  privacyUrl:
+    'https://billet.unitedtickets.dk/event/sex-pistols-feat-frank-carter/tap1/3715855?lang=sv-SE',
+  officialSiteUrl:
+    'https://billet.unitedtickets.dk/event/sex-pistols-feat-frank-carter/tap1/3715855?lang=sv-SE',
+  officialSiteLabel: 'UnitedTickets.dk',
+  marketingBrand: 'United Tickets',
   venue: {
-    name: 'Grand Palais',
-    text: 'Built for the 1900 World’s Fair and crowned by the largest glass roof in Europe, the Nef is one of the most spectacular rooms in Paris. Gärten brings cutting-edge electronic music under its steel and glass canopy, for one night, with Black Coffee.',
+    name: 'TAP1',
+    text: 'TAP1, København S. Sex Pistols feat. Frank Carter play here on 28 November 2026. The band has visited Denmark only twice before, in 1977 and in 1996.',
   },
   gettingThere: {
-    name: 'Grand Palais',
-    address:
-      'Grand Palais\nAvenue Winston Churchill\n75008 Paris, France\nMetro: Champs-Élysées – Clemenceau (lines 1 and 13)',
-    mapQuery: 'Grand Palais, Avenue Winston Churchill, 75008 Paris',
+    name: 'TAP1',
+    address: 'TAP1\nPrags Boulevard 47\n2300 København S',
+    mapQuery: 'TAP1, Prags Boulevard 47, 2300 København S',
   },
   accessibility:
-    'Please contact the organiser for access needs. 18+ event. Cashless only on site.',
+    'KØRESTOLSBILLET is kr. 790,00 (ticket price kr. 745,00), maximum 2 per order. LEDSAGERBILLET is kr. 0,00 and is issued by contacting Fan Care. Only a limited number of companion tickets for other disabilities are available.',
 } as const;
