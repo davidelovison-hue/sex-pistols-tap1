@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-<rect width="100%" height="100%" fill="#111"/>
-<rect x="36" y="36" width="728" height="528" fill="none" stroke="#f4f1ea" stroke-width="6"/>
-<text x="72" y="160" fill="#e10600" font-family="Impact, Arial Black, sans-serif" font-size="28" letter-spacing="4">TAP1 · 28 NOV 2026</text>
-<text x="72" y="280" fill="#f4f1ea" font-family="Impact, Arial Black, sans-serif" font-size="64">KØRESTOL</text>
-<text x="72" y="400" fill="#f4f1ea" font-family="Arial, sans-serif" font-size="36">KR. 790,00</text>
-<text x="72" y="500" fill="#f5c518" font-family="Arial, sans-serif" font-size="22">SEX PISTOLS FEAT. FRANK CARTER</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" overflow="hidden">
+  <rect width="1200" height="800" fill="#f5c518"/>
+  <rect x="0" y="520" width="1200" height="280" fill="#111111"/>
+  <circle cx="160" cy="180" r="120" fill="#111111"/>
+  <circle cx="160" cy="180" r="48" fill="#f5c518"/>
+  <g fill="#111111">
+    <circle cx="420" cy="80" r="14"/>
+    <circle cx="470" cy="80" r="14"/>
+    <circle cx="520" cy="80" r="14"/>
+    <circle cx="570" cy="80" r="14"/>
+    <circle cx="420" cy="130" r="14"/>
+    <circle cx="470" cy="130" r="14"/>
+    <circle cx="520" cy="130" r="14"/>
+    <circle cx="420" cy="180" r="14"/>
+    <circle cx="470" cy="180" r="14"/>
+    <circle cx="980" cy="220" r="90" fill="#e10600"/>
+  </g>
+  <text x="64" y="680" fill="#f4f1ea" font-family="Impact, Arial Black, sans-serif" font-size="68" letter-spacing="1">KØRESTOLSBILLET</text>
 </svg>

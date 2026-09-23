@@ -632,7 +632,7 @@
   }
 }
 
-/* —— Immersive hero (Fever immersive-style) —— */
+/* -- Immersive hero (Fever immersive-style) -- */
 .eventMediaHero--immersive {
   --event-media-hero-height: calc(100svh - var(--festival-nav-height, 3rem));
   position: relative;

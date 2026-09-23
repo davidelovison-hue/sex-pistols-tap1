@@ -1,4 +1,4 @@
-/* Post-checkout — centered stack (LIV-style framework), Pacha dark surfaces */
+/* Post-checkout - centered stack (LIV-style framework), Pacha dark surfaces */
 
 .orderConfirmPage {
   min-height: 100dvh;
@@ -9,7 +9,7 @@
   color-scheme: dark;
 }
 
-/* Top bar (dense, dark — like reference nav) */
+/* Top bar (dense, dark - like reference nav) */
 .orderConfirmTopBar {
   display: flex;
   align-items: center;

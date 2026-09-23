@@ -40,7 +40,7 @@ export type EventCheckoutState = {
   authIntent?: 'checkout' | 'profile'
   /** Skips login + guest-details; uses combined contact + payment screen. */
   guestCheckout?: boolean
-  /** Filename of uploaded PMR/PSH proof (prototype — no real upload). */
+  /** Filename of uploaded PMR/PSH proof (prototype - no real upload). */
   pmrProofFileName?: string
   /** PMR/PSH pre-booking questionnaire answers (no name/email). */
   pmrAnswers?: PmrPreBookingAnswers
@@ -87,7 +87,7 @@ export function isGuestDetails(x: unknown): x is GuestDetails {
   )
 }
 
-/** Basket + event context (guest optional — used on guest-details step). */
+/** Basket + event context (guest optional - used on guest-details step). */
 export function isEventCheckoutState(x: unknown): x is EventCheckoutState {
   if (!x || typeof x !== 'object') return false
   const o = x as Record<string, unknown>
@@ -185,7 +185,7 @@ export function getGuestFormErrors(g: GuestDetails): GuestFieldErrors {
   } else if (!/^\d{2}\/\d{2}\/\d{4}$/.test(dob)) {
     errors.dateOfBirth = 'Use dd/mm/yyyy (slashes are added as you type).'
   } else if (!isValidDobDdMmYyyy(dob)) {
-    errors.dateOfBirth = 'That day or month is not valid — check the date.'
+    errors.dateOfBirth = 'That day or month is not valid - check the date.'
   } else {
     const yyyy = Number(dob.split('/')[2])
     if (yyyy < 1990) {
@@ -269,7 +269,7 @@ export type OrderConfirmationState = EventCheckoutState & {
   orderRef: string
 }
 
-/** After pay, before confirmation — collect phone, DOB, gender. */
+/** After pay, before confirmation - collect phone, DOB, gender. */
 export type PostBookingState = EventCheckoutState & {
   guest: GuestDetails
   orderRef: string

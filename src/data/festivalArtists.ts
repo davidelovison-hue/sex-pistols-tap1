@@ -16,12 +16,16 @@ function artist(id: string, name: string, image: string): FestivalArtist {
   return { id, name, image, fallbackImage: LINEUP_FALLBACK_IMAGE };
 }
 
-/** Sex Pistols feat. Frank Carter, plus support still to be announced. */
+/**
+ * Live photos from Tons of Rock, Oslo, 2025.
+ * Birgit Fostervold, CC BY-SA 4.0, via Wikimedia Commons.
+ * Support is still unannounced, so that card stays a placeholder.
+ */
 export const FESTIVAL_ARTISTS: FestivalArtist[] = [
-  artist('sex-pistols', 'Sex Pistols', `${BASE}artist-sex-pistols.svg`),
-  artist('frank-carter', 'Frank Carter', `${BASE}artist-frank-carter.svg`),
-  artist('steve-jones', 'Steve Jones', `${BASE}artist-steve-jones.svg`),
-  artist('paul-cook', 'Paul Cook', `${BASE}artist-paul-cook.svg`),
-  artist('glen-matlock', 'Glen Matlock', `${BASE}artist-glen-matlock.svg`),
+  artist('sex-pistols', 'Sex Pistols', `${BASE}artist-sex-pistols.jpg`),
+  artist('frank-carter', 'Frank Carter', `${BASE}artist-frank-carter.jpg`),
+  artist('steve-jones', 'Steve Jones', `${BASE}artist-steve-jones.jpg`),
+  artist('paul-cook', 'Paul Cook', `${BASE}artist-paul-cook.jpg`),
+  artist('glen-matlock', 'Glen Matlock', `${BASE}artist-glen-matlock.jpg`),
   artist('support', 'Support TBA', `${BASE}artist-support.svg`),
 ];

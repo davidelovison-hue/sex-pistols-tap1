@@ -51,7 +51,7 @@
   width: auto;
   height: 2rem;
   max-width: 11rem;
-  /* Logo asset is white — invert for light navbar */
+  /* Logo asset is white - invert for light navbar */
   filter: invert(1);
 }
 

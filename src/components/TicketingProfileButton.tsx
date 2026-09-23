@@ -6,7 +6,7 @@ import { accountPath, connectPath } from '../lib/routes'
 import { getUserSession, isLoggedIn } from '../lib/userSession'
 
 type TicketingProfileButtonProps = {
-  /** Omit on hub listing — falls back to last order or first event. */
+  /** Omit on hub listing - falls back to last order or first event. */
   eventId?: string
   checkoutState?: EventCheckoutState | null
   className?: string

@@ -54,7 +54,7 @@ export function AddonCheckoutPrompt({
         aria-labelledby={titleId}
       >
         <h2 id={titleId} className="addonCheckoutPrompt__title">
-          Want to add merch, bar, or a shuttle?
+          Want to add merch or transportation?
         </h2>
         <div className="addonCheckoutPrompt__options">
           {PLAN_STEPS.filter((step) => !PLAN_CORE_STEP_IDS.includes(step.id)).map((step, index) => (

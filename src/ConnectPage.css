@@ -1,4 +1,4 @@
-/* Email / connect — dark canvas + white module card (Pacha checkout) */
+/* Email / connect - dark canvas + white module card (Pacha checkout) */
 
 .connectPage {
   position: relative;
@@ -348,7 +348,7 @@
   }
 }
 
-/* Email verify — centered form + site footer (dark checkout theme) */
+/* Email verify - centered form + site footer (dark checkout theme) */
 .connectPage--verify {
   flex: 1;
   display: flex;
@@ -482,7 +482,7 @@
   border-color: var(--pacha-cherry, #c10230);
 }
 
-/* Continue with email — Fever-style centered form on dark canvas */
+/* Continue with email - Fever-style centered form on dark canvas */
 .connectPage--emailStep {
   min-height: calc(100dvh - 5.5rem - env(safe-area-inset-top, 0px));
 }

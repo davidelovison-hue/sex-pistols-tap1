@@ -1,4 +1,4 @@
-/* Pacha checkout + guest-details — dark flow aligned with event ticket page (seamless with hub body gradient). */
+/* Pacha checkout + guest-details - dark flow aligned with event ticket page (seamless with hub body gradient). */
 
 :root {
   --checkout-max: 60rem;
@@ -26,7 +26,7 @@
   --checkout-accent-row: rgba(193, 2, 48, 0.14);
 }
 
-/* Shared dark inputs — guest checkout, details, payment, profile modal, verify code */
+/* Shared dark inputs - guest checkout, details, payment, profile modal, verify code */
 .guestInput,
 .guestCheckoutInput,
 .checkoutPaySelect,
@@ -217,7 +217,7 @@
   max-width: 100%;
 }
 
-/* Left column — white module (matches connect email card) */
+/* Left column - white module (matches connect email card) */
 .checkoutPaymentPanel {
   box-sizing: border-box;
   padding: 1.75rem 1.5rem 1.5rem;

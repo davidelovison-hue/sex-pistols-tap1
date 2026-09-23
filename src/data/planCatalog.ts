@@ -57,6 +57,27 @@ export const ENTRY_TICKET_IDS = [
 const TICKET_PRICE = 745;
 const TICKET_TOTAL = 790;
 
+const TEE_SIZES: VariantAxis = {
+  id: 'size',
+  label: 'Size',
+  options: ['S', 'M', 'L', 'XL', 'XXL'],
+};
+
+function merchTee(id: string, name: string, price: number): PlanEntity {
+  return {
+    id,
+    name,
+    price,
+    type: 'configurable_single',
+    listingTag: 'LIMITED',
+    description: 'Limited edition. Choose your size.',
+    variantAxes: [TEE_SIZES],
+    optionPrices: Object.fromEntries(TEE_SIZES.options.map((size) => [size, price])),
+    cardPreviewBullets: ['Limited edition', 'S-XXL'],
+    includedItems: ['1× t-shirt'],
+  };
+}
+
 export const PLAN_CATALOG: PlanCategory[] = [
   {
     id: 'overview',
@@ -117,6 +138,57 @@ export const PLAN_CATALOG: PlanCategory[] = [
       },
     ],
   },
+  {
+    id: 'merch',
+    title: 'Merch',
+    groups: [
+      {
+        id: 'merch-tees',
+        title: 'T-shirts',
+        entities: [
+          merchTee('merch-tee-show', 'T-shirt - Sex Pistols @ TAP1', 299),
+          merchTee('merch-tee-tap1', 'T-shirt TAP1 2026 - Black', 259),
+          merchTee('merch-tee-anarchy', 'T-shirt Anarchy - Black', 259),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'shuttle',
+    title: 'Transportation',
+    groups: [
+      {
+        id: 'shuttle-copenhagen',
+        title: 'København',
+        entities: [
+          {
+            id: 'shuttle-cph-return',
+            name: 'Return shuttle',
+            price: 110,
+            type: 'configurable_single',
+            listingTag: 'LIMITED',
+            description:
+              'Limited capacity. Night shuttle after the show at TAP1, Prags Boulevard. Choose where it drops you.',
+            cardPreviewBullets: ['Limited capacity', 'After the show'],
+            includedItems: ['One return seat from TAP1'],
+            variantAxes: [
+              {
+                id: 'route',
+                label: 'Drop-off',
+                options: ['København H', 'Nørreport'],
+                defaultOption: 'København H',
+              },
+            ],
+            optionPrices: {
+              'København H': 110,
+              'Nørreport': 110,
+            },
+            requires: ['ticket-standard', 'ticket-wheelchair'],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const BASE = import.meta.env.BASE_URL;
@@ -127,9 +199,17 @@ export const ENTITY_IMAGES: Record<string, string> = {
   'ticket-standard': `${BASE}ticket-standard.svg`,
   'ticket-wheelchair': `${BASE}ticket-wheelchair.svg`,
   'ticket-companion': `${BASE}ticket-companion.svg`,
+  'merch-tee-show': `${BASE}merch-show-front.jpg`,
+  'merch-tee-tap1': `${BASE}merch-tap1-front.jpg`,
+  'merch-tee-anarchy': `${BASE}merch-anarchy-front.jpg`,
+  'shuttle-cph-return': `${BASE}transport-shuttle.svg`,
 };
 
-export const ENTITY_GALLERIES: Record<string, string[]> = {};
+export const ENTITY_GALLERIES: Record<string, string[]> = {
+  'merch-tee-show': [`${BASE}merch-show-front.jpg`, `${BASE}merch-show-back.jpg`],
+  'merch-tee-tap1': [`${BASE}merch-tap1-front.jpg`, `${BASE}merch-tap1-back.jpg`],
+  'merch-tee-anarchy': [`${BASE}merch-anarchy-front.jpg`, `${BASE}merch-anarchy-back.jpg`],
+};
 
 export function getEntityImages(entityId: string): string[] {
   if (ENTITY_GALLERIES[entityId]) return ENTITY_GALLERIES[entityId];
@@ -149,7 +229,10 @@ export function findEntity(entityId: string): PlanEntity | undefined {
 
 export const PLAN_CORE_CATEGORY_IDS = ['entry'] as const;
 
-export const PLAN_ADDON_CATEGORIES: { id: string; label: string }[] = [];
+export const PLAN_ADDON_CATEGORIES: { id: string; label: string }[] = [
+  { id: 'merch', label: 'Merch' },
+  { id: 'shuttle', label: 'Transportation' },
+];
 
 export type PlanStepId = 'entry' | 'merch' | 'addons' | 'shuttle';
 
@@ -165,6 +248,8 @@ export const DEFAULT_PLAN_STEP: PlanStepId = 'entry';
 
 export const PLAN_STEPS: PlanStep[] = [
   { id: 'entry', title: 'Tickets', categoryIds: ['entry'] },
+  { id: 'merch', title: 'Merch', categoryIds: ['merch'] },
+  { id: 'shuttle', title: 'Transportation', categoryIds: ['shuttle'] },
 ];
 
 const CATEGORY_TO_STEP: Record<string, PlanStepId> = {

@@ -39,9 +39,14 @@
   min-height: 0;
 }
 
+.cardAdmission .imageWrapper {
+  background: #111;
+}
+
 .cardAdmission .image {
   object-fit: cover;
   object-position: center;
+  background: #111;
 }
 
 .cardSoldOut .imageWrapper {

@@ -29,7 +29,7 @@ export function ForcedPlanProgress({ activeStep }: ForcedPlanProgressProps) {
       {next ? (
         <p className="forcedPlanProgressNext">Up next: {next.title}</p>
       ) : (
-        <p className="forcedPlanProgressNext">Last stop — then checkout</p>
+        <p className="forcedPlanProgressNext">Last stop - then checkout</p>
       )}
       <div className="forcedPlanProgressTrack" aria-hidden="true">
         <div className="forcedPlanProgressFill" style={{ width: `${percent}%` }} />

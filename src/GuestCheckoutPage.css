@@ -80,7 +80,7 @@
   color: var(--checkout-text);
 }
 
-/* Contact + payment fields — same visible dark inputs as verify code */
+/* Contact + payment fields - same visible dark inputs as verify code */
 .guestCheckoutPage .guestCheckoutInput,
 .guestCheckoutPage .guestCheckoutCardFields .guestCheckoutInput {
   box-sizing: border-box;

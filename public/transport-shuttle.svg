@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" overflow="hidden">
+  <rect width="1200" height="800" fill="#101014"/>
+  <rect y="560" width="1200" height="70" fill="#f5c518"/>
+  <rect x="180" y="250" width="620" height="250" rx="28" fill="#e10600"/>
+  <rect x="760" y="300" width="150" height="110" rx="16" fill="#e10600"/>
+  <circle cx="340" cy="520" r="48" fill="#111"/>
+  <circle cx="700" cy="520" r="48" fill="#111"/>
+  <circle cx="340" cy="520" r="18" fill="#f5c518"/>
+  <circle cx="700" cy="520" r="18" fill="#f5c518"/>
+  <rect x="220" y="290" width="120" height="80" rx="8" fill="#f4f1ea"/>
+  <rect x="360" y="290" width="120" height="80" rx="8" fill="#f4f1ea"/>
+  <rect x="500" y="290" width="120" height="80" rx="8" fill="#f4f1ea"/>
+  <text x="180" y="180" fill="#f4f1ea" font-family="Impact, Arial Black, sans-serif" font-size="54">TAP1</text>
+  <text x="430" y="180" fill="#f5c518" font-family="Impact, Arial Black, sans-serif" font-size="54">K&#216;BENHAVN</text>
+</svg>

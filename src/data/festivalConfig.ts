@@ -11,6 +11,8 @@ export type PlanCategory = {
 export const PLAN_CATEGORIES: PlanCategory[] = [
   { id: 'overview', title: 'Overview' },
   { id: 'entry', title: 'Tickets' },
+  { id: 'merch', title: 'Merch' },
+  { id: 'shuttle', title: 'Transportation' },
 ];
 
 /** Default plan tab (tickets). */
@@ -48,11 +50,11 @@ export const GALLERY_IMAGES = [
   },
 ];
 
-export const FESTIVAL_HERO_VIDEO = '';
+export const FESTIVAL_HERO_VIDEO = `${BASE}hero-sex-pistols.mp4`;
 
 export const FESTIVAL_MEDIA_HERO = {
   video: FESTIVAL_HERO_VIDEO,
-  videoPoster: `${BASE}event-poster.svg`,
+  videoPoster: `${BASE}artist-sex-pistols.jpg`,
   grid: HERO_GRID_IMAGES,
 };
 

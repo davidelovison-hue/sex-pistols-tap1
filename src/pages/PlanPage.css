@@ -369,7 +369,7 @@
     --plan-card-width: 100%;
   }
 
-  /* Desktop sidebar cart — not mounted on mobile; keep rule as safety net */
+  /* Desktop sidebar cart - not mounted on mobile; keep rule as safety net */
   .planCartColumn {
     display: none !important;
   }

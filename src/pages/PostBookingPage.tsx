@@ -6,7 +6,7 @@ import { persistOrderConfirmation } from '../lib/orderConfirmStorage'
 import { planPath, orderConfirmationPath } from '../lib/routes'
 import { persistLastOrderEventId } from '../lib/userSession'
 
-/** Legacy route: post-booking form removed — forward to confirmation. */
+/** Legacy route: post-booking form removed - forward to confirmation. */
 export function PostBookingPage() {
   const { eventId } = useParams<{ eventId: string }>()
   const location = useLocation()

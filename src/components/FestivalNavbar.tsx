@@ -55,7 +55,7 @@ export function FestivalNavbar({ profileSlot }: FestivalNavbarProps) {
           <button
             type="button"
             className="logo logoButton"
-            aria-label={`${FESTIVAL_EVENT.title} — home`}
+            aria-label={`${FESTIVAL_EVENT.title} - home`}
             onClick={goToLandingTop}
           >
             <img

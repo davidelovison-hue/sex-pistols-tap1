@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" overflow="hidden">
+  <rect width="1200" height="800" fill="#14080c"/>
+  <circle cx="1040" cy="140" r="160" fill="#ff2d8a"/>
+  <path fill="#111111" d="M390 210h150l40 70h40l40-70h150l110 110-70 70h-40v330H390V390h-40l-70-70z"/>
+  <path fill="#2a2a2a" d="M580 210h40l-20 55z"/>
+  <text x="600" y="360" text-anchor="middle" fill="#f4f1ea" font-family="Impact, Arial Black, sans-serif" font-size="28" letter-spacing="3">TAP1</text>
+</svg>

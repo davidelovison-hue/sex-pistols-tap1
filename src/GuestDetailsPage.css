@@ -1,4 +1,4 @@
-/* Guest details — form fields match dark checkout tokens (import CheckoutPage.css first) */
+/* Guest details - form fields match dark checkout tokens (import CheckoutPage.css first) */
 
 .guestDetailsPage__title {
   margin: 0 0 0.5rem;
@@ -55,7 +55,7 @@
   color: var(--checkout-text-muted);
 }
 
-/* Segmented phone — dark checkout, same rhythm as .guestInput */
+/* Segmented phone - dark checkout, same rhythm as .guestInput */
 .guestPhoneField {
   display: flex;
   align-items: stretch;
@@ -270,7 +270,7 @@
   min-width: 0;
 }
 
-/* Date of birth — calendar popover above input */
+/* Date of birth - calendar popover above input */
 .guestDobField {
   position: relative;
 }
@@ -313,7 +313,7 @@
   outline-offset: 2px;
 }
 
-/* Compact popover — Ticketclub-style (~280px), dark surface */
+/* Compact popover - Ticketclub-style (~280px), dark surface */
 .guestDobCalendar {
   position: absolute;
   left: 0;

@@ -144,7 +144,7 @@
   background: var(--pacha-cherry, #c10230);
 }
 
-/* Notification preferences — dark modal (LIV-style layout) */
+/* Notification preferences - dark modal (LIV-style layout) */
 .profileModal__card--prefs {
   max-width: 26rem;
   padding: 0;

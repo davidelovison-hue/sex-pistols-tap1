@@ -1,4 +1,4 @@
-/* Fever light checkout theme — overrides dark Pacha checkout tokens */
+/* Fever light checkout theme - overrides dark Pacha checkout tokens */
 
 :root {
   --checkout-surface-header: #ffffff;
@@ -17,10 +17,10 @@
   --checkout-text-dim: #aaadb0;
   --checkout-accent-row: #f3f3f3;
 
-  --pacha-cherry: #111111;
-  --pacha-cherry-mid: #000000;
-  --pacha-cherry-deep: #000000;
-  --pacha-cherry-glow: rgba(17, 17, 17, 0.2);
+  --pacha-cherry: #0079ca;
+  --pacha-cherry-mid: #0062a3;
+  --pacha-cherry-deep: #00548c;
+  --pacha-cherry-glow: rgba(0, 121, 202, 0.2);
   --pacha-red-mist: #f3f3f3;
   --pacha-black: #111111;
 }
@@ -141,7 +141,7 @@
 .checkoutPage__submit,
 .postBookingContinue,
 .guestDetailsContinue {
-  background: #0a0a0a;
+  background: #0079ca;
   box-shadow: none;
 }
 
@@ -150,7 +150,7 @@
 .checkoutPage__submit:hover:not(:disabled),
 .postBookingContinue:hover:not(:disabled),
 .guestDetailsContinue:hover:not(:disabled) {
-  background: #262626;
+  background: #0062a3;
   box-shadow: none;
 }
 

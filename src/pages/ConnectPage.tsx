@@ -27,7 +27,7 @@ type ConnectStep = ConnectFlowStep
 
 type SocialProvider = 'facebook' | 'google' | 'apple'
 
-/** Demo OAuth identities — prototype only; each provider goes straight to checkout. */
+/** Demo OAuth identities - prototype only; each provider goes straight to checkout. */
 const SOCIAL_DEMO_ACCOUNTS: Record<SocialProvider, { email: string; name: string }> = {
   facebook: { email: 'demo.facebook@gmail.com', name: 'Facebook User' },
   google: { email: 'demo.google@gmail.com', name: 'Google User' },
@@ -92,10 +92,10 @@ export function ConnectPage() {
       {
         title: 'Tickets',
         links: [
-          { label: `${eventTitle} — General access`, href: planPath('entry') },
-          { label: `${eventTitle} — VIP area`, href: planPath('entry') },
-          { label: `${eventTitle} — Merch`, href: planPath('merch') },
-          { label: `${eventTitle} — Shuttle`, href: planPath('shuttle') },
+          { label: `${eventTitle} - General access`, href: planPath('entry') },
+          { label: `${eventTitle} - VIP area`, href: planPath('entry') },
+          { label: `${eventTitle} - Merch`, href: planPath('merch') },
+          { label: `${eventTitle} - Transportation`, href: planPath('shuttle') },
         ],
       },
       {
@@ -284,7 +284,7 @@ export function ConnectPage() {
               {isProfile ? 'Sign in to continue' : 'Log in to continue'}
             </h1>
             <p className="connectPage__emailLead">
-              We need to confirm your email address — it only takes a moment!
+              We need to confirm your email address - it only takes a moment!
             </p>
           </header>
 

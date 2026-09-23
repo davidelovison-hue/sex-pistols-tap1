@@ -15,7 +15,7 @@ export function StickyButton({
   priceLabel = 'Comprar ahora',
 }: StickyButtonProps) {
   const displayText = price && price > 0 
-    ? `${formatPrice(price)} — ${priceLabel}` 
+    ? `${formatPrice(price)} - ${priceLabel}` 
     : label;
 
   return (
